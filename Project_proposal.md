@@ -7,21 +7,37 @@
 
 ## Overview
 
-We want to build a program that suggests (and generates) a Dungeons and Dragons character based on some information that you provide to it.
+In this project We want to implement a handwritten math calculator on the FPGA platform PYNQ-Z2.
 
 ## Background
 
-Dungeons and Dragons is a role-playing adventure game that Parth happens to play and love (his character is a unicorn-bloodline sorceress... go figure). Each player creates a character that they'll play as during the course of the game.
+To perform the calculation, we first need to recognize and extract the numbers and operators in the image stored on the SD card. The images are considered as input to the operation. After extracting these elements the size will be changed to (32x32x1). The convolutional neural network (cnn) finally outputs an array with a size (14 x 1). The meaning of these 14 numbers is shown in the following table:
 
-There are a lot of factors that go into character creation: you have to pick the correct stats for the character, the character needs a name and an alignment, etc. More often than not, players have a vision for their character that's designed around components of their personality, abilities, etc. rather than their stats.
+Number	Meaning
+0	0
+1	1
+2	2
+3	3
+4	4
+5	5
+6	6
+7	7
+8	8
+9	9
+10	+
+11	-
+12	*
+13	/
 
-There are a few websites on the internet that'll help you build your character, like [OrcPub](https://orcpub2.com/pages/dnd/5e/newb-character-builder), but all of them require you to specify what we'd consider extranneous information about your character, rather than focusing on the things that interest you the most.
-
-We want to let a user supply a set of characteristics to include and exclude in their character - say, powers that they want their characters to have - and then we ask more questions that are needed, then build an entire character profile based on those characteristics. Hopefully, we can also use some machine learning techniques to generate new character profiles centered on the given specifications using a variant of k-nearest neighbors and a few hand-chosen heuristics.
-
+Then we accept the recognition result of the convolution network and finally calculate the result of the input.
 
 ## Implementation Strategy
 
+This project consists of two parts: Software_Project and Hardware_Project.
+
+The Software_Project includes the tensorflow model of this network, pre-trained network parameters and data sets. So if you want to understand more about the network structure, re-train your own parameters or train this network to detect others, you should look at the Software_Project/ folder.
+
+If you want to rebuild the hardware of this project, you need to look the Hardware_Project/ folder and follow my instructions below
 Our project falls into three major categories - scraping the data, interacting with the user, and computing the character profile to output to the user.
 
 First, we're going to scrape the [D&D 5e API](http://www.dnd5eapi.co/), which has all of the D&D information, collected from the Player's Handbook and Dungeon Master's Guide. We'll put all of the character, spell, and equipment information into a database so that we can efficiently query it later. For this part, we're going to rely extensively on the `requests` module discussed in class - and perhaps some of the multiprocessing primitives in the standard library to speed up the download.
@@ -33,15 +49,19 @@ To actually compute the best character profiles, we'll simply filter out all the
 
 ## Tasks
 
-1. Authenticate to the D&D 5e API
-2. Download all of the character, class, race, spell, and equipment information into a database
-3. Load the data into Python classes: `Character`, `Class`, `Race`, `Equipment`, `Spell`
-4. Main loop that asks user for characteristics and returns character objects using the class interface
-5. Match character specifications to classes, races, equipment, and spells
-6. Sort remaining characteristics by a "good" heuristic (we'll need to try a lot of heuristics)
-7. *(Stretch)* Use common descriptional substitutions and word misspellings for more flexible user input
-8. *(Stretch)* Map the characters into a high-dimensional vector space and run clustering algorithms to find the best-matching character profiles
-9. *(Stretch)* Use generative adversarial networks to generate images of the character's face. Currently I had to draw this myself:
+1. Generate HLS IP
+2. Block Design in Vivado
+3. Run on PYNQ-Z2
+
+5. Authenticate to the D&D 5e API
+6. Download all of the character, class, race, spell, and equipment information into a database
+7. Load the data into Python classes: `Character`, `Class`, `Race`, `Equipment`, `Spell`
+8. Main loop that asks user for characteristics and returns character objects using the class interface
+9. Match character specifications to classes, races, equipment, and spells
+10. Sort remaining characteristics by a "good" heuristic (we'll need to try a lot of heuristics)
+11. *(Stretch)* Use common descriptional substitutions and word misspellings for more flexible user input
+12. *(Stretch)* Map the characters into a high-dimensional vector space and run clustering algorithms to find the best-matching character profiles
+13. *(Stretch)* Use generative adversarial networks to generate images of the character's face. Currently I had to draw this myself:
 <p align="center">
 	<img src="Kali.png" width="300" alt="Parth's D&D Character." />
 </p>
