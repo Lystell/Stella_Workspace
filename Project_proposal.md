@@ -13,6 +13,22 @@ In this project We want to implement a handwritten math calculator on the FPGA p
 
 To perform the calculation, we first need to recognize and extract the numbers and operators in the image stored on the SD card. The images are considered as input to the operation. After extracting these elements the size will be changed to (32x32x1). The convolutional neural network (cnn) finally outputs an array with a size (14 x 1). The meaning of these 14 numbers is shown in the following table:
 
+| Number | Meaning  |
+| :----: | :------: |
+|   0    |    0     |
+|   1    |    1     |
+|   2    |    2     |
+|   3    |    3     |
+|   4    |    4     |
+|   5    |    5     |
+|   6    |    6     |
+|   7    |    7     |
+|   8    |    8     |
+|   9    |    9     |
+|   10   |    +     |
+|   11   |    -     |
+|   12   | $\times$ |
+|   13   |  $\div$  |
 Number	Meaning
 0	0
 1	1
