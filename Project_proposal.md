@@ -2,12 +2,14 @@
 # Project Proposal:  Handwritten Mathematical Calculator on FPGA
 
 
-> Stella Nguemmo
+> Stella Nguemmo, Supriya Kajla
 
 
 ## Overview
 
-In this project We want to implement a handwritten math calculator on the FPGA platform PYNQ-Z2.
+In this project we want to implement a handwritten math calculator on the FPGA platform PYNQ-Z2 which performs all Arithmatic operations on numbers. 
+                                                              OR
+In this project we want to implement a handwritten math calculator on the FPGA platform PYNQ-Z2 which performs Arithmatic operations on decimal numbers.
 
 ## Background
 
