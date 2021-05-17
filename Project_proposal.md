@@ -49,6 +49,31 @@ Number	Meaning
 
 Then we accept the recognition result of the convolution network and finally calculate the result of the input.
 
+
+SUPRIYA 
+
+In this project, we will try to implement a Handwritten Mathematical Calculator on the PYNQ-Z2 FPGA platform. We can provide an input in the form of a picture stored in the SD card. It will then try to detect elements present in the picture such as possible numbers or mathematical operators, extract these elements separately, and resizes it to a size of (32x32x1). It will use the method of convolutional neural network in order to analyse the picture and finally output an array of size (14x1). There will be a total of these 14 numbers as shown in the below table:
+
+
+| Number | Meaning  |
+| :----: | :------: |
+|   0    |    0     |
+|   1    |    1     |
+|   2    |    2     |
+|   3    |    3     |
+|   4    |    4     |
+|   5    |    5     |
+|   6    |    6     |
+|   7    |    7     |
+|   8    |    8     |
+|   9    |    9     |
+|   10   |    +     |
+|   11   |    -     |
+|   12   |    *     |
+|   13   |    /     |
+
+Subsequently, we will accept the recognition result of the convolutional neural network, and finally calculate the result of the input.
+
 ## Implementation Strategy
 
 This project consists of two parts: Software_Project and Hardware_Project.
@@ -63,6 +88,23 @@ First, we're going to scrape the [D&D 5e API](http://www.dnd5eapi.co/), which ha
 To interact with the user, we're going to have a simple text-based I/O system where the user enters character information one at a time and then signals when done. We'll then ask more questions (but only the *really* important ones) and output a bunch of potential characters for the user to choose from.
 
 To actually compute the best character profiles, we'll simply filter out all the characters that *don't* match the desired profile. Of the remaining options, we'll sort them on a combination of relevance to the original suggestions and based on self-computed heuristics about character effectiveness. We plan to use the awesome `pandas` library for better data manipulation of the character data in raw Python.
+
+Supriya
+
+This project consists of only one part: Software_Project.
+
+The Software_Project includes the tensorflow model of this network, pre-trained network parameters and data sets. By the end of this project, we will be able to understand more about the network structure, how to re-train our own parameters or train the network to detect others.
+Here are the few steps that will help us in implementing the project on our FPGA platform.
+
+Tools required:
+
+Jupyter Notebook
+Python 
+Tensorflow 1.X
+PYNQ-Z2 FPGA Platform
+PYNQ-Z2 v2.5 images
+
+
 
 
 ## Tasks
@@ -85,6 +127,8 @@ To actually compute the best character profiles, we'll simply filter out all the
 </p>
 
 Honestly, the only part we're worried about is the actual algorithm of choosing the best matching character. Can a naive algorithm do "well enough," or do we need to incorporate ML techniques to get reasonable results? We're fairly confident that we can scrape the character data and do the console I/O.
+
+Supriya
 
 
 ### Estimated Timeline
