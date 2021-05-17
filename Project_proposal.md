@@ -2,7 +2,7 @@
 # Project Proposal:  Handwritten Mathematical Calculator on FPGA
 
 
-> Stella Nguemmo
+> Stella Nguemo
 
 
 ## Overview
@@ -52,45 +52,35 @@ To actually compute the best character profiles, we'll simply filter out all the
 ## Tasks
 
 1. Generate HLS IP
-2. Block Design in Vivado
-3. Run on PYNQ-Z2
+2. Load overlay  and IP
+3. Insert image Input Path
+4. allocated the memory  inbuff
+5. weight and bias copyto memory
+6. image pre-processing
+7. hardware initiation
+8. hardware  control
+9. implement the calculator 
+10. main function to use the calculator
+11. Run on PYNQ-Z2
 
-5. Authenticate to the D&D 5e API
-6. Download all of the character, class, race, spell, and equipment information into a database
-7. Load the data into Python classes: `Character`, `Class`, `Race`, `Equipment`, `Spell`
-8. Main loop that asks user for characteristics and returns character objects using the class interface
-9. Match character specifications to classes, races, equipment, and spells
-10. Sort remaining characteristics by a "good" heuristic (we'll need to try a lot of heuristics)
-11. *(Stretch)* Use common descriptional substitutions and word misspellings for more flexible user input
-12. *(Stretch)* Map the characters into a high-dimensional vector space and run clustering algorithms to find the best-matching character profiles
-13. *(Stretch)* Use generative adversarial networks to generate images of the character's face. Currently I had to draw this myself:
-<p align="center">
-	<img src="Kali.png" width="300" alt="Parth's D&D Character." />
-</p>
-
-Honestly, the only part we're worried about is the actual algorithm of choosing the best matching character. Can a naive algorithm do "well enough," or do we need to incorporate ML techniques to get reasonable results? We're fairly confident that we can scrape the character data and do the console I/O.
 
 
 ### Estimated Timeline
 
-**(Core)**
-
-* Task 1 (1 hours) - both
-* Task 2 (2 hours) - both
-* Task 3 (0.5 hours) - Guido
-* Task 4 (1 hours) - Michael
+* Task 1 (3 hours)
+* Task 2 (2 hours)
+* Task 3 (3 hours)
+* Task 4 (1 hours)
 * Task 5 (1 hours) - Parth
 * Task 6 (3 hours) - both
-
-**(Stretch)**
-
 * Task 7 (1.5 hours) - Michael
 * Task 8 (4 hours) - Parth
 * Task 9 (5 hours) - Guido
+* Task 10 (4 hours) - Parth
+* Task 11 (5 hours) - Guido
 
-We've made a little progress on Task 1 (we acquired an API token), but we haven't used it to connect to the API endpoint yet.
-
+0
 
 ## Resources
 
-All of our data is going to come from the APIs described above, but we're also going to hand-code some test characters for small data sets to make sure the general logic is working. 
+In this project, we will be using Microsoft Visual Studio for compilation purposes. Vivado HLS will be used to create block designs. We also need a PYNQ-Z2 FPGA platform and some PYNQ-Z2 images for this project.
