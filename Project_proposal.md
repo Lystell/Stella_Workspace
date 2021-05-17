@@ -27,23 +27,9 @@ To perform the calculation, we first need to recognize and extract the numbers a
 |   9    |    9     |
 |   10   |    +     |
 |   11   |    -     |
-|   12   | $\times$ |
-|   13   |  $\div$  |
-Number	Meaning
-0	0
-1	1
-2	2
-3	3
-4	4
-5	5
-6	6
-7	7
-8	8
-9	9
-10	+
-11	-
-12	*
-13	/
+|   12   |    *     |
+|   13   |    /     |
+
 
 Then we accept the recognition result of the convolution network and finally calculate the result of the input.
 
