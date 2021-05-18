@@ -109,26 +109,13 @@ PYNQ-Z2 v2.5 images
 
 ## Tasks
 
-1. Generate HLS IP
-2. Block Design in Vivado
-3. Run on PYNQ-Z2
+1. First we will import all the necessary modules such as tensorflow and keras.
+2. We will then Load overlay and IP.
+3. Allocate the memory inbuffer.
+4. The step of network data and image pre-processing will be done.
+5. The calculation part takes place where the definition of operators is being analysed and the neccessary calculation is done.
+6. The main function is executed and detection of various example images takes place and the result is returned.
 
-5. Authenticate to the D&D 5e API
-6. Download all of the character, class, race, spell, and equipment information into a database
-7. Load the data into Python classes: `Character`, `Class`, `Race`, `Equipment`, `Spell`
-8. Main loop that asks user for characteristics and returns character objects using the class interface
-9. Match character specifications to classes, races, equipment, and spells
-10. Sort remaining characteristics by a "good" heuristic (we'll need to try a lot of heuristics)
-11. *(Stretch)* Use common descriptional substitutions and word misspellings for more flexible user input
-12. *(Stretch)* Map the characters into a high-dimensional vector space and run clustering algorithms to find the best-matching character profiles
-13. *(Stretch)* Use generative adversarial networks to generate images of the character's face. Currently I had to draw this myself:
-<p align="center">
-	<img src="Kali.png" width="300" alt="Parth's D&D Character." />
-</p>
-
-Honestly, the only part we're worried about is the actual algorithm of choosing the best matching character. Can a naive algorithm do "well enough," or do we need to incorporate ML techniques to get reasonable results? We're fairly confident that we can scrape the character data and do the console I/O.
-
-Supriya
 
 
 ### Estimated Timeline
