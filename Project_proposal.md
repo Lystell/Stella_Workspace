@@ -90,4 +90,5 @@ PYNQ-Z2 v2.5 images
 * Task 8 (4 hours)
 * Task 9 (3 hours)
 * Task 10 (4 hours)
+* Task 11 (4 hours)
 
