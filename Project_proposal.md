@@ -11,46 +11,8 @@ In this project we want to implement a handwritten math calculator on the FPGA p
                                                               OR
 In this project we want to implement a handwritten math calculator on the FPGA platform PYNQ-Z2 which performs Arithmatic operations on decimal numbers.
 
+
 ## Background
-
-To perform the calculation, we first need to recognize and extract the numbers and operators in the image stored on the SD card. The images are considered as input to the operation. After extracting these elements the size will be changed to (32x32x1). The convolutional neural network (cnn) finally outputs an array with a size (14 x 1). The meaning of these 14 numbers is shown in the following table:
-
-| Number | Meaning  |
-| :----: | :------: |
-|   0    |    0     |
-|   1    |    1     |
-|   2    |    2     |
-|   3    |    3     |
-|   4    |    4     |
-|   5    |    5     |
-|   6    |    6     |
-|   7    |    7     |
-|   8    |    8     |
-|   9    |    9     |
-|   10   |    +     |
-|   11   |    -     |
-|   12   | $\times$ |
-|   13   |  $\div$  |
-Number	Meaning
-0	0
-1	1
-2	2
-3	3
-4	4
-5	5
-6	6
-7	7
-8	8
-9	9
-10	+
-11	-
-12	*
-13	/
-
-Then we accept the recognition result of the convolution network and finally calculate the result of the input.
-
-
-SUPRIYA 
 
 In this project, we will try to implement a Handwritten Mathematical Calculator on the PYNQ-Z2 FPGA platform. We can provide an input in the form of a picture stored in the SD card. It will then try to detect elements present in the picture such as possible numbers or mathematical operators, extract these elements separately, and resizes it to a size of (32x32x1). It will use the method of convolutional neural network in order to analyse the picture and finally output an array of size (14x1). There will be a total of these 14 numbers as shown in the below table:
 
